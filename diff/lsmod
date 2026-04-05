@@ -1,0 +1,415 @@
+2,30c2,7
+< intel_ipu6_isys       143360  0
+< videobuf2_dma_sg       24576  1 intel_ipu6_isys
+< videobuf2_memops       16384  1 videobuf2_dma_sg
+< videobuf2_v4l2         40960  1 intel_ipu6_isys
+< videobuf2_common       98304  4 videobuf2_v4l2,intel_ipu6_isys,videobuf2_dma_sg,videobuf2_memops
+< ivsc_csi               20480  1
+< ivsc_ace               16384  0
+< rfcomm                110592  6
+< cmac                   12288  3
+< snd_seq_dummy          12288  0
+< algif_hash             16384  1
+< algif_skcipher         12288  1
+< snd_hrtimer            12288  1
+< af_alg                 32768  6 algif_hash,algif_skcipher
+< snd_seq               135168  7 snd_seq_dummy
+< snd_seq_device         16384  1 snd_seq
+< ccm                    24576  6
+< bnep                   36864  2
+< mei_vsc                20480  2
+< btusb                  81920  0
+< btmtk                  32768  1 btusb
+< btrtl                  36864  1 btusb
+< btbcm                  24576  1 btusb
+< btintel                73728  1 btusb
+< bluetooth            1200128  34 btrtl,btmtk,btintel,btbcm,bnep,btusb,rfcomm
+< gpio_ljca              16384  2
+< i2c_ljca               16384  0
+< snd_soc_sof_sdw        57344  4
+< snd_sof_probes         36864  0
+---
+> dm_crypt               65536  1
+> encrypted_keys         28672  1 dm_crypt
+> trusted                45056  2 encrypted_keys,dm_crypt
+> asn1_encoder           16384  1 trusted
+> tee                    61440  1 trusted
+> snd_soc_sof_sdw        57344  0
+32c9
+< snd_soc_rt715_sdca     49152  1
+---
+> snd_sof_probes         36864  0
+34c11
+< snd_hda_codec_intelhdmi    28672  1
+---
+> snd_soc_rt715_sdca     49152  1
+36a14
+> snd_hda_codec_intelhdmi    28672  1
+40d17
+< hid_sensor_custom_intel_hinge    12288  0
+43d19
+< hid_sensor_als         16384  0
+45,47d20
+< hid_sensor_trigger     20480  4 hid_sensor_custom_intel_hinge,hid_sensor_als
+< industrialio_triggered_buffer    12288  1 hid_sensor_trigger
+< kfifo_buf              12288  1 industrialio_triggered_buffer
+49d21
+< hid_sensor_iio_common    20480  3 hid_sensor_trigger,hid_sensor_custom_intel_hinge,hid_sensor_als
+51d22
+< industrialio          143360  5 industrialio_triggered_buffer,hid_sensor_trigger,hid_sensor_custom_intel_hinge,kfifo_buf,hid_sensor_als
+53d23
+< hid_sensor_custom      28672  0
+56d25
+< hid_sensor_hub         32768  5 hid_sensor_trigger,hid_sensor_iio_common,hid_sensor_custom_intel_hinge,hid_sensor_als,hid_sensor_custom
+61d29
+< intel_ishtp_hid        28672  0
+67d34
+< intel_uncore_frequency    12288  0
+69,70d35
+< intel_uncore_frequency_common    16384  1 intel_uncore_frequency
+< vfat                   28672  1
+72d36
+< fat                   114688  1 vfat
+76d39
+< iwlmvm                724992  0
+77a41
+> ccm                    24576  0
+78a43,45
+> intel_uncore_frequency    12288  0
+> intel_uncore_frequency_common    16384  1 intel_uncore_frequency
+> algif_aead             12288  0
+80,83d46
+< x86_pkg_temp_thermal    16384  0
+< dell_pc                12288  0
+< snd_ctl_led            28672  0
+< intel_powerclamp       24576  0
+85,86c48,52
+< coretemp               20480  0
+< mac80211             1728512  1 iwlmvm
+---
+> hid_sensor_als         16384  0
+> hid_sensor_custom_intel_hinge    12288  0
+> des3_ede_x86_64        45056  0
+> hid_sensor_trigger     20480  4 hid_sensor_custom_intel_hinge,hid_sensor_als
+> industrialio_triggered_buffer    12288  1 hid_sensor_trigger
+87a54,56
+> kfifo_buf              12288  1 industrialio_triggered_buffer
+> hid_sensor_iio_common    20480  3 hid_sensor_trigger,hid_sensor_custom_intel_hinge,hid_sensor_als
+> x86_pkg_temp_thermal    16384  0
+89,91c58,62
+< kvm_intel             516096  0
+< processor_thermal_device_pci    16384  0
+< ptp                    53248  1 iwlmvm
+---
+> intel_powerclamp       24576  0
+> intel_ipu6_isys       143360  0
+> industrialio          143360  5 industrialio_triggered_buffer,hid_sensor_trigger,hid_sensor_custom_intel_hinge,kfifo_buf,hid_sensor_als
+> des_generic            12288  0
+> coretemp               20480  0
+92a64
+> videobuf2_dma_sg       24576  1 intel_ipu6_isys
+94,96c66,69
+< processor_thermal_device    20480  1 processor_thermal_device_pci
+< pps_core               32768  1 ptp
+< kvm                  1462272  1 kvm_intel
+---
+> libdes                 20480  2 des_generic,des3_ede_x86_64
+> videobuf2_memops       16384  1 videobuf2_dma_sg
+> kvm_intel             516096  0
+> hid_sensor_custom      28672  0
+98,102c71,73
+< processor_thermal_wt_hint    12288  2 processor_thermal_device_pci,processor_thermal_device
+< libarc4                12288  1 mac80211
+< platform_temperature_control    16384  1 processor_thermal_device
+< processor_thermal_soc_slider    16384  1 processor_thermal_device
+< ucsi_acpi              12288  0
+---
+> algif_skcipher         12288  0
+> videobuf2_v4l2         40960  1 intel_ipu6_isys
+> hid_sensor_hub         32768  5 hid_sensor_trigger,hid_sensor_iio_common,hid_sensor_custom_intel_hinge,hid_sensor_als,hid_sensor_custom
+104,106c75,76
+< platform_profile       20480  2 dell_pc,processor_thermal_soc_slider
+< irqbypass              16384  1 kvm
+< typec_ucsi             77824  1 ucsi_acpi
+---
+> videobuf2_common       98304  4 videobuf2_v4l2,intel_ipu6_isys,videobuf2_dma_sg,videobuf2_memops
+> iwlmvm                724992  0
+108,112c78,83
+< processor_thermal_rfim    28672  1 processor_thermal_device
+< dell_laptop            45056  0
+< intel_rapl_msr         20480  0
+< iTCO_wdt               16384  0
+< rapl                   20480  0
+---
+> cmac                   12288  0
+> kvm                  1462272  1 kvm_intel
+> ivsc_csi               20480  1
+> ivsc_ace               16384  0
+> intel_ishtp_hid        28672  0
+> joydev                 28672  0
+114,117c85,93
+< typec                 118784  1 typec_ucsi
+< processor_thermal_rapl    16384  1 processor_thermal_device
+< mei_pxp                20480  0
+< iwlwifi               618496  1 iwlmvm
+---
+> irqbypass              16384  1 kvm
+> md4                    16384  0
+> mac80211             1728512  1 iwlmvm
+> snd_pcm               217088  16 snd_soc_rt715_sdca,snd_soc_avs,snd_hda_codec_hdmi,snd_soc_rt1316_sdw,snd_hda_intel,snd_hda_codec,soundwire_intel,snd_sof,snd_soc_sdca,snd_sof_intel_hda_common,snd_compress,snd_sof_intel_hda_generic,snd_soc_core,snd_sof_utils,snd_hda_core,snd_pcm_dmaengine
+> iTCO_wdt               16384  0
+> algif_hash             16384  0
+> intel_skl_int3472_tps68470    20480  0
+> snd_timer              57344  1 snd_pcm
+> snd_ctl_led            28672  0
+119c95,105
+< mei_hdcp               28672  0
+---
+> ptp                    53248  1 iwlmvm
+> snd                   155648  13 snd_ctl_led,snd_soc_sof_sdw,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_sof,snd_soc_sdca,snd_timer,snd_compress,snd_soc_sdw_utils,snd_soc_core,snd_pcm
+> pps_core               32768  1 ptp
+> qrtr                   57344  2
+> af_alg                 32768  3 algif_hash,algif_skcipher,algif_aead
+> libarc4                12288  1 mac80211
+> iTCO_vendor_support    12288  1 iTCO_wdt
+> tps68470_regulator     12288  0
+> soundcore              16384  2 snd_ctl_led,snd
+> ov01a10                24576  0
+> hid_multitouch         36864  0
+121c107,117
+< snd_pcm               217088  16 snd_soc_rt715_sdca,snd_soc_avs,snd_hda_codec_hdmi,snd_soc_rt1316_sdw,snd_hda_intel,snd_hda_codec,soundwire_intel,snd_sof,snd_soc_sdca,snd_sof_intel_hda_common,snd_compress,snd_sof_intel_hda_generic,snd_soc_core,snd_sof_utils,snd_hda_core,snd_pcm_dmaengine
+---
+> ghash_clmulni_intel    12288  0
+> processor_thermal_device_pci    16384  0
+> btusb                  81920  0
+> mei_vsc                20480  2
+> dell_pc                12288  0
+> rapl                   20480  0
+> wl                   6520832  0
+> mei_hdcp               28672  0
+> intel_rapl_msr         20480  0
+> mei_pxp                20480  0
+> ucsi_acpi              12288  0
+123,125c119,134
+< joydev                 28672  0
+< iTCO_vendor_support    12288  1 iTCO_wdt
+< roles                  16384  1 typec_ucsi
+---
+> intel_pmc_core        159744  0
+> v4l2_fwnode            36864  4 ov01a10,ivsc_csi,intel_ipu6_isys
+> v4l2_async             36864  4 v4l2_fwnode,ov01a10,ivsc_csi,intel_ipu6_isys
+> videodev              405504  6 v4l2_async,v4l2_fwnode,videobuf2_v4l2,ov01a10,ivsc_csi,intel_ipu6_isys
+> processor_thermal_device    20480  1 processor_thermal_device_pci
+> btmtk                  32768  1 btusb
+> processor_thermal_wt_hint    12288  2 processor_thermal_device_pci,processor_thermal_device
+> btrtl                  36864  1 btusb
+> platform_temperature_control    16384  1 processor_thermal_device
+> processor_thermal_soc_slider    16384  1 processor_thermal_device
+> btbcm                  24576  1 btusb
+> processor_thermal_rfim    28672  1 processor_thermal_device
+> typec_ucsi             77824  1 ucsi_acpi
+> pmt_telemetry          16384  1 intel_pmc_core
+> processor_thermal_rapl    16384  1 processor_thermal_device
+> platform_profile       20480  2 dell_pc,processor_thermal_soc_slider
+127,131c136,138
+< dell_wmi               28672  1 dell_laptop
+< hid_multitouch         36864  0
+< dell_smbios            36864  3 dell_wmi,dell_pc,dell_laptop
+< intel_uncore          274432  0
+< cfg80211             1470464  3 iwlmvm,iwlwifi,mac80211
+---
+> typec                 118784  1 typec_ucsi
+> btintel                73728  1 btusb
+> pmt_discovery          20480  1 pmt_telemetry
+132a140,154
+> processor_thermal_power_floor    12288  2 processor_thermal_device_pci,processor_thermal_device
+> processor_thermal_mbox    12288  4 processor_thermal_power_floor,processor_thermal_wt_req,processor_thermal_rfim,processor_thermal_wt_hint
+> dell_laptop            45056  0
+> roles                  16384  1 typec_ucsi
+> bluetooth            1196032  6 btrtl,btmtk,btintel,btbcm,btusb
+> iwlwifi               618496  1 iwlmvm
+> mc                     94208  7 v4l2_async,videodev,videobuf2_v4l2,ov01a10,ivsc_csi,intel_ipu6_isys,videobuf2_common
+> intel_uncore          274432  0
+> intel_oc_wdt           12288  0
+> i2c_ljca               16384  0
+> dell_smm_hwmon         28672  0
+> gpio_ljca              16384  2
+> pcspkr                 12288  0
+> spi_nor               180224  0
+> clk_tps68470           12288  0
+134,135c156,158
+< snd_timer              57344  3 snd_seq,snd_hrtimer,snd_pcm
+< ov01a10                24576  0
+---
+> i2c_hid_acpi           12288  0
+> pmt_class              20480  2 pmt_telemetry,pmt_discovery
+> dell_wmi               28672  1 dell_laptop
+137,140c160,161
+< spi_nor               180224  0
+< pcspkr                 12288  0
+< psmouse               245760  0
+< dell_smm_hwmon         28672  0
+---
+> intel_pmc_ssram_telemetry    16384  1 intel_pmc_core
+> dell_wmi_sysman        61440  0
+142,143c163
+< mei_me                 57344  2
+< intel_ish_ipc          36864  0
+---
+> psmouse               245760  0
+145,147c165,169
+< intel_skl_int3472_tps68470    20480  0
+< snd                   155648  25 snd_ctl_led,snd_soc_sof_sdw,snd_seq,snd_seq_device,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_sof,snd_soc_sdca,snd_timer,snd_compress,snd_soc_sdw_utils,snd_soc_core,snd_pcm
+< v4l2_fwnode            36864  4 ov01a10,ivsc_csi,intel_ipu6_isys
+---
+> i2c_hid                45056  1 i2c_hid_acpi
+> intel_ish_ipc          32768  0
+> i2c_mux                20480  1 i2c_i801
+> dell_smbios            36864  3 dell_wmi,dell_pc,dell_laptop
+> mei_me                 57344  2
+149,150d170
+< processor_thermal_power_floor    12288  2 processor_thermal_device_pci,processor_thermal_device
+< dell_wmi_sysman        61440  0
+152d171
+< firmware_attributes_class    12288  1 dell_wmi_sysman
+153a173,174
+> intel_ishtp            86016  2 intel_ishtp_hid,intel_ish_ipc
+> intel_skl_int3472_discrete    28672  0
+155,157c176,178
+< intel_pmc_core        159744  0
+< int3403_thermal        16384  0
+< tps68470_regulator     12288  0
+---
+> firmware_attributes_class    12288  1 dell_wmi_sysman
+> mei_vsc_hw             28672  1 mei_vsc
+> intel_skl_int3472_common    16384  2 intel_skl_int3472_tps68470,intel_skl_int3472_discrete
+159,160c180
+< soundcore              16384  2 snd_ctl_led,snd
+< i2c_mux                20480  1 i2c_i801
+---
+> int3403_thermal        16384  0
+162,167c182
+< clk_tps68470           12288  0
+< intel_oc_wdt           12288  2
+< thunderbolt           593920  1 typec
+< rfkill                 45056  10 iwlmvm,bluetooth,dell_laptop,cfg80211
+< intel_ishtp            86016  2 intel_ishtp_hid,intel_ish_ipc
+< igen6_edac             36864  0
+---
+> int3400_thermal        24576  0
+169d183
+< processor_thermal_mbox    12288  4 processor_thermal_power_floor,processor_thermal_wt_req,processor_thermal_rfim,processor_thermal_wt_hint
+171,181c185,189
+< v4l2_async             36864  4 v4l2_fwnode,ov01a10,ivsc_csi,intel_ipu6_isys
+< mei_vsc_hw             28672  1 mei_vsc
+< pmt_telemetry          16384  1 intel_pmc_core
+< i2c_hid_acpi           12288  0
+< pmt_discovery          20480  1 pmt_telemetry
+< i2c_hid                45056  1 i2c_hid_acpi
+< videodev              405504  6 v4l2_async,v4l2_fwnode,videobuf2_v4l2,ov01a10,ivsc_csi,intel_ipu6_isys
+< int3400_thermal        24576  0
+< pmt_class              20480  2 pmt_telemetry,pmt_discovery
+< intel_skl_int3472_discrete    28672  0
+< intel_hid              32768  0
+---
+> intel_hid              28672  0
+> acpi_thermal_rel       24576  1 int3400_thermal
+> cfg80211             1470464  4 wl,iwlmvm,iwlwifi,mac80211
+> igen6_edac             36864  0
+> mac_hid                12288  0
+183,184c191
+< mc                     94208  7 v4l2_async,videodev,videobuf2_v4l2,ov01a10,ivsc_csi,intel_ipu6_isys,videobuf2_common
+< intel_pmc_ssram_telemetry    16384  1 intel_pmc_core
+---
+> acpi_pad              184320  0
+186,187c193
+< acpi_thermal_rel       24576  1 int3400_thermal
+< intel_skl_int3472_common    16384  2 intel_skl_int3472_tps68470,intel_skl_int3472_discrete
+---
+> rfkill                 45056  6 iwlmvm,bluetooth,dell_laptop,cfg80211
+189,200c195,204
+< acpi_pad              184320  0
+< mac_hid                12288  0
+< crypto_user            12288  0
+< i2c_dev                28672  0
+< ntsync                 20480  0
+< nfnetlink              20480  1
+< dm_crypt               65536  1
+< encrypted_keys         28672  1 dm_crypt
+< trusted                45056  2 encrypted_keys,dm_crypt
+< asn1_encoder           16384  1 trusted
+< tee                    61440  1 trusted
+< xe                   4227072  0
+---
+> tun                    73728  0
+> pkcs8_key_parser       12288  0
+> nfnetlink              20480  2
+> overlay               249856  1
+> squashfs               98304  1
+> loop                   49152  2
+> isofs                  65536  0
+> cdrom                  86016  1 isofs
+> dm_mod                233472  11 dm_crypt
+> xe                   4222976  0
+202,205d205
+< drm_ttm_helper         20480  1 xe
+< drm_suballoc_helper    16384  1 xe
+< gpu_sched              69632  1 xe
+< dm_mod                233472  3 dm_crypt
+207d206
+< drm_exec               12288  2 drm_gpuvm,xe
+208a208,212
+> gpu_sched              69632  1 xe
+> drm_exec               12288  2 drm_gpuvm,xe
+> drm_suballoc_helper    16384  1 xe
+> drm_ttm_helper         20480  1 xe
+> i915                 4943872  2
+212,213c216,218
+< nvme                   73728  2
+< nvme_core             274432  3 nvme
+---
+> drm_buddy              32768  2 xe,i915
+> ttm                   126976  3 drm_ttm_helper,xe,i915
+> nvme                   73728  1
+215c220,227
+< nvme_keyring           20480  1 nvme_core
+---
+> i2c_algo_bit           24576  2 xe,i915
+> uas                    36864  0
+> usb_ljca               28672  3 gpio_ljca,i2c_ljca,spi_ljca
+> usb_storage            90112  3 uas
+> serio_raw              20480  0
+> aesni_intel           102400  1
+> nvme_core             274432  2 nvme
+> drm_display_helper    286720  2 xe,i915
+217,218c229,230
+< nvme_auth              32768  1 nvme_core
+< ghash_clmulni_intel    12288  0
+---
+> nvme_keyring           20480  1 nvme_core
+> video                  81920  4 dell_wmi,dell_laptop,xe,i915
+219a232,233
+> nvme_auth              32768  1 nvme_core
+> cec                    98304  3 drm_display_helper,xe,i915
+221,223c235
+< usb_ljca               28672  3 gpio_ljca,i2c_ljca,spi_ljca
+< aesni_intel           102400  8
+< hkdf                   12288  1 nvme_auth
+---
+> thunderbolt           593920  1 typec
+225,230c237
+< idma64                 20480  0
+< serio_raw              20480  0
+< i915                 4943872  41
+< i2c_algo_bit           24576  2 xe,i915
+< drm_buddy              32768  2 xe,i915
+< video                  81920  4 dell_wmi,dell_laptop,xe,i915
+---
+> hkdf                   12288  1 nvme_auth
+232d238
+< ttm                   126976  3 drm_ttm_helper,xe,i915
+234,235c240
+< drm_display_helper    286720  2 xe,i915
+< cec                    98304  3 drm_display_helper,xe,i915
+---
+> idma64                 20480  0

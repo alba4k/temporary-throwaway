@@ -1,0 +1,28 @@
+1,2c1,12
+< local/fwupd 2.1.1-3
+<     Simple daemon to allow session software to update firmware
+---
+> local/b43-fwcutter 019-6
+>     firmware extractor for the b43 kernel module
+> local/linux-firmware 20260309-1
+>     Firmware files for Linux - Default set
+> local/linux-firmware-amdgpu 20260309-1
+>     Firmware files for Linux - Firmware for AMD Radeon GPUs
+> local/linux-firmware-atheros 20260309-1
+>     Firmware files for Linux - Firmware for Qualcomm Atheros WiFi and Bluetooth adapters
+> local/linux-firmware-broadcom 20260309-1
+>     Firmware files for Linux - Firmware for Broadcom and Cypress network adapters
+> local/linux-firmware-cirrus 20260309-1
+>     Firmware files for Linux - Firmware for Cirrus Logic audio devices
+4a15,20
+> local/linux-firmware-marvell 20260309-1
+>     Firmware files for Linux - Firmware for Marvell devices
+> local/linux-firmware-mediatek 20260309-1
+>     Firmware files for Linux - Firmware for MediaTek and Ralink devices
+> local/linux-firmware-nvidia 20260309-1
+>     Firmware files for Linux - Firmware for NVIDIA GPUs and SoCs
+6a23,26
+> local/linux-firmware-radeon 20260309-1
+>     Firmware files for Linux - Firmware for ATI Radeon GPUs
+> local/linux-firmware-realtek 20260309-1
+>     Firmware files for Linux - Firmware for Realtek devices
