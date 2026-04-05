@@ -1,0 +1,10 @@
+local/fwupd 2.1.1-3
+    Simple daemon to allow session software to update firmware
+local/linux-firmware-intel 20260309-1
+    Firmware files for Linux - Firmware for Intel devices
+local/linux-firmware-other 20260309-1
+    Firmware files for Linux - Unsorted firmware for various devices
+local/linux-firmware-whence 20260309-1
+    Firmware files for Linux - WHENCE file (vendor licenses)
+local/sof-firmware 2025.12.2-1
+    Sound Open Firmware
