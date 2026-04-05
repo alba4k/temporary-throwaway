@@ -1,0 +1,30 @@
+local/b43-fwcutter 019-6
+    firmware extractor for the b43 kernel module
+local/linux-firmware 20260309-1
+    Firmware files for Linux - Default set
+local/linux-firmware-amdgpu 20260309-1
+    Firmware files for Linux - Firmware for AMD Radeon GPUs
+local/linux-firmware-atheros 20260309-1
+    Firmware files for Linux - Firmware for Qualcomm Atheros WiFi and Bluetooth adapters
+local/linux-firmware-broadcom 20260309-1
+    Firmware files for Linux - Firmware for Broadcom and Cypress network adapters
+local/linux-firmware-cirrus 20260309-1
+    Firmware files for Linux - Firmware for Cirrus Logic audio devices
+local/linux-firmware-intel 20260309-1
+    Firmware files for Linux - Firmware for Intel devices
+local/linux-firmware-marvell 20260309-1
+    Firmware files for Linux - Firmware for Marvell devices
+local/linux-firmware-mediatek 20260309-1
+    Firmware files for Linux - Firmware for MediaTek and Ralink devices
+local/linux-firmware-nvidia 20260309-1
+    Firmware files for Linux - Firmware for NVIDIA GPUs and SoCs
+local/linux-firmware-other 20260309-1
+    Firmware files for Linux - Unsorted firmware for various devices
+local/linux-firmware-radeon 20260309-1
+    Firmware files for Linux - Firmware for ATI Radeon GPUs
+local/linux-firmware-realtek 20260309-1
+    Firmware files for Linux - Firmware for Realtek devices
+local/linux-firmware-whence 20260309-1
+    Firmware files for Linux - WHENCE file (vendor licenses)
+local/sof-firmware 2025.12.2-1
+    Sound Open Firmware
